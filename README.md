@@ -1,75 +1,43 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a single-day project for a React frontend interview.
+The built project is an interactive Kanban Task board.
 
-Currently, two official plugins are available:
+I used the AI agent [v0 by Vercel](https://v0.app/), as my coding assistant.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Here is the history of my prompt
+## Create the project prompt
 
-## React Compiler
+- Build a modern polished React and Tailwind CSS Kanban board component. Include tasks with titles, descriptions, priority tags (low, medium, high), due dates, and column status. Add a sleek dark-mode aesthetic, search input, and a modal to add new tasks.`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Modify the output prompts
 
-## Expanding the ESLint configuration
+- Make the priority badges softer and add a progress bar at the top
+- Change the frontend tooling from next.js to vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Understanding the code prompt
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Please explain what this code does in simple terms:
+{{the code}}
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Improving the product prompts
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Implement React's useState and useEffect hooks to persist task movements
+and additions to local storage
+- Add robust filter handlers so users can search tasks by title or filter
+by priority flags. Return your answer as a unified diff, with unchanged
+context included
 
-```
+## Optimization prompt
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Analyze this code and suggest optimizations or improvements. If nothing
+needs changing, say so.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## In Summary
 
-```
+- I visited vO by Vercel, a web based AI agent
+- I submitted prompts to it
+- I integrated the generated code to my local setup by copying
+- I improved on the code's design by implementing local storage persistence,
+and robust filters.
